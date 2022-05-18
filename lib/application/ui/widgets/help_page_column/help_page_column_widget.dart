@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teary/application/ui/widgets/helppage_column/helppage_single_widget.dart';
+import 'package:teary/application/ui/widgets/help_page_column/help_page_single_widget.dart';
 
 abstract class HelpPageColumnWidget extends StatelessWidget {
   const HelpPageColumnWidget({Key? key}) : super(key: key);
@@ -17,10 +17,6 @@ class _HomePageColumnSingleWidget extends HelpPageColumnWidget {
   Widget build(BuildContext context) {
     return Column(
       children: const [
-        HelpPageSingleWidget(),
-        HelpPageSingleWidget(),
-        HelpPageSingleWidget(),
-        HelpPageSingleWidget(),
         HelpPageSingleWidget(),
       ],
     );

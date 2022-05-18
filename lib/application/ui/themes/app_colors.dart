@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 abstract class AppColors {
+  static const headerGreyBlock = Color(0xFFF2F2F7);
   static const textBlack = Color(0xFF1C1C1C);
   static const textGrey = Color(0xFF7A7A7A);
   static const green = Color(0xFF00BD13);
@@ -14,6 +15,9 @@ abstract class AppColors {
   static const white = Color(0xFFFFFFFF);
   static const white72 = Color(0xB7FFFFFF);
   static const white88 = Color(0xE0FFFFFF);
+  static const todayColor = Color(0xFFFE794E);
+  static const violet = Color(0xFFA771EC);
+
   //Calendar colors
   static const greyDayName = Color(0xFF7C7C7C);
 

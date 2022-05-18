@@ -1,6 +1,8 @@
+
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:teary/application/ui/themes/app_colors.dart';
 
 class Calendar extends StatefulWidget {
   const Calendar({Key? key}) : super(key: key);
@@ -17,6 +19,7 @@ class _CalendarState extends State<Calendar> {
   @override
   Widget build(BuildContext context) {
     return TableCalendar(
+      daysOfWeekHeight: 16,
       headerVisible: false,
       availableCalendarFormats: const {
         CalendarFormat.month: 'Месяц',
@@ -51,21 +54,22 @@ class _CalendarState extends State<Calendar> {
       calendarStyle: CalendarStyle(
         isTodayHighlighted: true,
         selectedDecoration: BoxDecoration(
-          color: Colors.grey,
+          color: AppColors.violet,
           shape: BoxShape.circle,
         ),
-        selectedTextStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+        selectedTextStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
         todayDecoration: BoxDecoration(
-          color: Colors.purpleAccent,
-          shape: BoxShape.circle,
+          // color: AppColors.green,
+          // shape: BoxShape.circle,
+          // borderRadius: 4;
         ),
-        todayTextStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+        todayTextStyle: TextStyle(color: AppColors.todayColor, fontWeight: FontWeight.w800,fontSize: 16),
 
         defaultTextStyle: TextStyle(fontWeight: FontWeight.w500, color: Colors.black),
-        weekendTextStyle: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.w500),
-        holidayTextStyle: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.w500),
-        outsideTextStyle: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
-        rangeStartTextStyle: TextStyle(color: Colors.red, fontWeight: FontWeight.w500),
+        weekendTextStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+        holidayTextStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+        outsideTextStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+        rangeStartTextStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
       ),
       headerStyle: HeaderStyle(
         titleTextStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w500, fontSize: 16),
@@ -75,8 +79,8 @@ class _CalendarState extends State<Calendar> {
         titleCentered: true,
       ),
       daysOfWeekStyle: DaysOfWeekStyle(
-        weekdayStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
-        weekendStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+        weekdayStyle: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
+        weekendStyle: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
       ),
     );
   }

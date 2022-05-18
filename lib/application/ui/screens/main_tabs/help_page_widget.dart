@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:teary/application/ui/widgets/helppage_column/helppage_column_widget.dart';
+import 'package:teary/application/ui/widgets/help_page_column/help_page_column_widget.dart';
 
 class HelpPageWidget extends StatelessWidget {
   const HelpPageWidget({Key? key}) : super(key: key);
@@ -41,10 +41,6 @@ class HelpPageWidget extends StatelessWidget {
         SliverList(
             delegate: SliverChildListDelegate([
           HelpPageColumnWidget.single(),
-          Container(color: Colors.red, height: 150.0),
-          Container(color: Colors.green, height: 150.0),
-          Container(color: Colors.red, height: 150.0),
-          Container(color: Colors.blue, height: 150.0),
         ]))
       ],
     );

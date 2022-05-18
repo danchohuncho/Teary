@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:teary/application/ui/widgets/help_page_column/help_page_column_widget.dart';
+import 'package:teary/application/ui/widgets/notes_page_column/notes_page_single_widget.dart';
 import '../../widgets/calendar.dart';
+import '../../widgets/notes_page_column/notes_page_column_widget.dart';
 
 class NotesWidget extends StatelessWidget {
   const NotesWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    DateTime currentDate = DateTime.now();
     return CustomScrollView(
       slivers: [
         SliverAppBar(
           // expandedHeight: 100,
           pinned: true,
-/*          bottom: PreferredSize(                       // Add this code
-            preferredSize: Size.fromHeight(00.0),      // Add this code
-            child: Text(''),                           // Add this code
-          ),*/
           title: Row(
             children: [
               IconButton(
@@ -49,15 +47,15 @@ class NotesWidget extends StatelessWidget {
         ),
         SliverList(
             delegate: SliverChildListDelegate([
-          const Calendar(),
-
-          Container(color: Colors.red, height: 150.0),
+          Container(child: const Calendar(),  color: Colors.white,),
+          NotesPageColumnWidget.single(),
+/*          Container(color: Colors.blue, height: 150.0),
           Container(color: Colors.green, height: 150.0),
           Container(color: Colors.red, height: 150.0),
           Container(color: Colors.blue, height: 150.0),
           Container(color: Colors.indigo, height: 150.0),
           Container(color: Colors.cyan, height: 150.0),
-          Container(color: Colors.grey, height: 150.0),
+          Container(color: Colors.grey, height: 150.0),*/
         ]))
       ],
     );
