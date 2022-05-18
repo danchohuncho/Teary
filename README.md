@@ -1,6 +1,10 @@
-# teary
+# Teary
 
-A new Flutter project.
+Teary is an assistant for your mental health. Here you can share your experiences, find peace in difficult moments and observe your internal changes.
+
+The main focus of our app is tracking mood changes, mainly focused on documenting tears. It helps to reflect and work through experiences based on the methods of CBT. It is both your diary and a helper in recovery.
+
+We plan to expand the functionality of the application by adding new features.
 
 ## Getting Started
 
