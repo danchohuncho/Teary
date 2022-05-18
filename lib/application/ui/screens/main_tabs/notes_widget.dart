@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:teary/application/ui/widgets/help_page_column/help_page_column_widget.dart';
-import 'package:teary/application/ui/widgets/notes_page_column/notes_page_single_widget.dart';
+import 'package:teary/application/ui/themes/app_colors.dart';
+import 'package:teary/application/ui/widgets/action_button.dart';
 import '../../widgets/calendar.dart';
 import '../../widgets/notes_page_column/notes_page_column_widget.dart';
 
@@ -47,8 +47,12 @@ class NotesWidget extends StatelessWidget {
         ),
         SliverList(
             delegate: SliverChildListDelegate([
-          Container(child: const Calendar(),  color: Colors.white,),
+          Container(
+            child: const Calendar(),
+            color: AppColors.white,
+          ),
           NotesPageColumnWidget.single(),
+          ActionButton(),
 /*          Container(color: Colors.blue, height: 150.0),
           Container(color: Colors.green, height: 150.0),
           Container(color: Colors.red, height: 150.0),

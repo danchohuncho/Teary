@@ -4,7 +4,7 @@ abstract class AppColors {
   static const headerGreyBlock = Color(0xFFF2F2F7);
   static const textBlack = Color(0xFF1C1C1C);
   static const textGrey = Color(0xFF7A7A7A);
-  static const green = Color(0xFF00BD13);
+  static const green = Color(0xFF66B749);
   static const green72 = Color(0xB700BD13);
   static const blue = Color(0xFF170AF4);
   static const darkBackground = Color(0xFF000000);
@@ -23,7 +23,8 @@ abstract class AppColors {
 
   //HelpPageItemBackgroudColors
 
-  static const purpleBackground = Color(0xFFDCD0EC);
+  static const violetBackground = Color(0xFFDCD0EC);
   static const yellowBackground = Color(0xFFFFEDC6);
   static const greenBackground = Color(0xFFD4F4C9);
+  static const mainBackground = Color(0xFFFAF5FF);
 }

@@ -12,6 +12,12 @@ class NotesPageSingleWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(20)),
+        boxShadow: [BoxShadow(
+          color: Color.fromRGBO(0, 0, 0, 0.08),
+          spreadRadius: 4,
+          blurRadius: 14,
+          offset: Offset(0, 5),
+        )]
       ),
       padding: const EdgeInsets.fromLTRB(0, 22, 0, 0),
       margin: const EdgeInsets.fromLTRB(25, 20, 25, 0),

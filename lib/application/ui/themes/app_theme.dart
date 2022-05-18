@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:teary/application/ui/themes/app_colors.dart';
 
 const MaterialColor white = const MaterialColor(
@@ -37,7 +36,7 @@ const MaterialColor orangeBackground = const MaterialColor(
 abstract class AppTheme {
   static final light = ThemeData(
     primarySwatch: white,
-    scaffoldBackgroundColor: AppColors.yellowBackground,
+    scaffoldBackgroundColor: AppColors.mainBackground,
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: white,
       selectedItemColor: Color(0xFF1C1C1C),

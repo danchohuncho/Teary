@@ -5,13 +5,20 @@ import 'package:teary/application/ui/themes/app_colors.dart';
 import 'package:teary/resources/app_fonts.dart';
 
 class HelpPageSingleWidget extends StatelessWidget {
-  const HelpPageSingleWidget({Key? key}) : super(key: key);
+
+  String title;
+  String description;
+  String img;
+  Color backgroundColor;
+
+  HelpPageSingleWidget({Key? key, required this.img, required this.title, required this.description, required this.backgroundColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
-      decoration: const BoxDecoration(
-          color: AppColors.purpleBackground,
+      decoration: BoxDecoration(
+          color: backgroundColor,
           borderRadius: BorderRadius.all(Radius.circular(20)),
           boxShadow: [
             BoxShadow(
@@ -31,11 +38,11 @@ class HelpPageSingleWidget extends StatelessWidget {
             height: 111,
             padding: const EdgeInsets.fromLTRB(14, 0, 0, 0),
             child: Stack(
-              children: const <Widget>[
+              children: <Widget>[
                 Positioned(
                   top: 10,
                   left: 40,
-                  child: _ImageWidget(),
+                  child: _ImageWidget(img: img,),
                 ),
                 Positioned(
                   top: -4,
@@ -59,11 +66,11 @@ class HelpPageSingleWidget extends StatelessWidget {
                   flex: 3,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       SizedBox(height: 9),
-                      _TitleWidget(),
+                      _TitleWidget(title: title,),
                       SizedBox(height: 6),
-                      _DescriptionWidget(),
+                      _DescriptionWidget(description: description,),
                       SizedBox(height: 10),
                     ],
                   ),
@@ -78,15 +85,17 @@ class HelpPageSingleWidget extends StatelessWidget {
 }
 
 class _TitleWidget extends StatelessWidget {
-  const _TitleWidget({Key? key}) : super(key: key);
+  String title;
+
+  _TitleWidget({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: const [
+      children: [
         Text(
-          "Исчезающий дневник",
-          style: TextStyle(
+          title,
+          style: const TextStyle(
             fontSize: 12,
             color: AppColors.textBlack,
             fontFamily: AppFonts.montserrat,
@@ -118,13 +127,16 @@ class _FavoriteWidget extends StatelessWidget {
 }
 
 class _DescriptionWidget extends StatelessWidget {
-  const _DescriptionWidget({Key? key}) : super(key: key);
+
+  String description;
+
+  _DescriptionWidget({Key? key, required this.description}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "В котором буквы исчезают вместе с негативом",
-      style: TextStyle(
+    return Text(
+      description,
+      style: const TextStyle(
         fontSize: 9,
         color: AppColors.textGrey,
         fontFamily: AppFonts.montserrat,
@@ -136,13 +148,15 @@ class _DescriptionWidget extends StatelessWidget {
 }
 
 class _ImageWidget extends StatelessWidget {
-  const _ImageWidget({Key? key}) : super(key: key);
+  var img;
+
+  _ImageWidget({Key? key, required this.img}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: Image.asset(
-        "assets/images/notebook_illustration.png",
+        img,
         height: 94,
         width: 179,
       ),

@@ -1,11 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:teary/application/ui/screens/main_tabs/main_tabs_view_model.dart';
 import 'package:teary/application/ui/screens/main_tabs/notes_widget.dart';
 import 'package:teary/application/ui/screens/main_tabs/help_page_widget.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:teary/resources/resources.dart';
 
 class MainTabsScreen extends StatelessWidget {
   const MainTabsScreen({Key? key}) : super(key: key);
@@ -31,21 +30,31 @@ class _buildNavigateButton extends StatelessWidget {
       height: 60,
       width: 60,
       child: Container(
-        child: SpeedDial(
-          animatedIconTheme: IconThemeData(size: 24.0),
-          backgroundColor: Color(0xFF8F47B7),
-          animatedIcon: AnimatedIcons.close_menu,
+        /*child: SpeedDial(
+          icon: CupertinoIcons.plus,
+          activeIcon: CupertinoIcons.xmark,
+          backgroundColor: AppColors.green,
+          foregroundColor: AppColors.white,
+          activeBackgroundColor: AppColors.white,
+          activeForegroundColor: AppColors.green,
+          iconTheme: IconThemeData(size: 30,),
+
+          // backgroundColor: AppColors.green,
+          // activeBackgroundColor: AppColors.white,
+          // animatedIcon: AnimatedIcons.menu_close,
           children: [
-            SpeedDialChild(child: SvgPicture.asset('assets/images/tears_icon.svg', color: Colors.white,),
+            SpeedDialChild(child: SvgPicture.asset(
+              'assets/images/teaars_icon.svg', color: Colors.white,),
               label: 'Слезы',
               backgroundColor: Color(0xFF8F47B7),
             ),
-            SpeedDialChild(child: SvgPicture.asset('assets/images/notes_icon.svg', color: Colors.white,),
+            SpeedDialChild(child: SvgPicture.asset(
+              'assets/images/nootes_icon.svg', color: Colors.white,),
               label: 'Запись',
               backgroundColor: Color(0xFF66B749),
             )
           ],
-        ),
+        ),*/
       ),
     );
   }
