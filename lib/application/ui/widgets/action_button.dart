@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:teary/application/ui/themes/app_colors.dart';
 
+import '../../../resources/strings.dart';
+
 bool toggle = true;
+double blurRatio = 0.001;
 
 class ActionButton extends StatefulWidget {
   const ActionButton({Key? key}) : super(key: key);
@@ -48,59 +51,31 @@ class _ActionButtonState extends State<ActionButton>
   double size2 = 50.0;
   var buttonColor = AppColors.green;
   var imgButtonColor = AppColors.white;
+  bool visibilityTag = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150.0,
-      width: 150.0,
+      padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height / 34),
+      height: 200.0,
+      width: 200.0,
       child: Stack(
         children: [
-          AnimatedAlign(
-            duration: toggle
-                ? Duration(milliseconds: 275)
-                : Duration(milliseconds: 875),
+          _ActionButtonItem(
             alignment: alignment1,
-            curve: toggle ? Curves.easeIn : Curves.elasticOut,
-            child: AnimatedContainer(
-              duration: Duration(milliseconds: 275),
-              curve: toggle ? Curves.easeIn : Curves.easeOut,
-              height: size1,
-              width: size1,
-              decoration: BoxDecoration(
-                color: AppColors.violet,
-                borderRadius: BorderRadius.circular(40.0),
-              ),
-              child: SvgPicture.asset('assets/images/action_tears_icon.svg',
-                  color: AppColors.white,
-                  height: 5,
-                  width: 5,
-                  fit: BoxFit.scaleDown),
-            ),
+            size: size1,
+            imgSource: 'assets/images/action_tears_icon.svg',
+            label: addTears,
+            color: AppColors.violet,
+            visibility: visibilityTag,
           ),
-          AnimatedAlign(
-            duration: toggle
-                ? Duration(milliseconds: 275)
-                : Duration(milliseconds: 875),
+          _ActionButtonItem(
             alignment: alignment2,
-            curve: toggle ? Curves.easeIn : Curves.elasticOut,
-            child: AnimatedContainer(
-                duration: Duration(milliseconds: 275),
-                curve: toggle ? Curves.easeIn : Curves.easeOut,
-                height: size2,
-                width: size2,
-                decoration: BoxDecoration(
-                  color: AppColors.green,
-                  borderRadius: BorderRadius.circular(40.0),
-                ),
-                child: SvgPicture.asset(
-                  'assets/images/action_notes_icon.svg',
-                  color: AppColors.white,
-                  height: 5,
-                  width: 5,
-                  fit: BoxFit.scaleDown,
-                )
-            ),
+            size: size2,
+            imgSource: 'assets/images/action_notes_icon.svg',
+            label: addNotes,
+            color: AppColors.green,
+            visibility: visibilityTag,
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -128,17 +103,23 @@ class _ActionButtonState extends State<ActionButton>
                           _controller.forward();
                           buttonColor = AppColors.white;
                           imgButtonColor = AppColors.green;
+
+
                           Future.delayed(Duration(milliseconds: 200), () {
-                            alignment1 = Alignment(-0.3, -0.7);
+                            visibilityTag = true;
+                            alignment1 = Alignment(-0.9, -0.3);
                             size1 = 60.0;
+                            blurRatio = 2;
                           });
                           Future.delayed(Duration(milliseconds: 200), () {
-                            alignment2 = Alignment(0.3, -0.7);
+                            alignment2 = Alignment(0.9, -0.3);
                             size2 = 60.0;
                           });
                         } else {
+                          visibilityTag = false;
                           buttonColor = AppColors.green;
                           imgButtonColor = AppColors.white;
+                          blurRatio = 0.001;
                           toggle = !toggle;
                           _controller.reverse();
                           alignment1 = Alignment.bottomCenter;
@@ -162,3 +143,54 @@ class _ActionButtonState extends State<ActionButton>
     );
   }
 }
+
+class _ActionButtonItem extends StatelessWidget {
+  const _ActionButtonItem({
+    Key? key,
+    required this.alignment,
+    required this.size,
+    required this.imgSource,
+    required this.label,
+    required this.color,
+    required this.visibility,
+  }) : super(key: key);
+
+  final Alignment alignment;
+  final double size;
+  final String imgSource;
+  final String label;
+  final color;
+  final visibility;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedAlign(
+      duration:
+          toggle ? Duration(milliseconds: 275) : Duration(milliseconds: 875),
+      alignment: alignment,
+      curve: toggle ? Curves.easeIn : Curves.elasticOut,
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+        AnimatedContainer(
+          duration: Duration(milliseconds: 275),
+          curve: toggle ? Curves.easeIn : Curves.easeOut,
+          height: size,
+          width: size,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(40.0),
+          ),
+          child: SvgPicture.asset(imgSource,
+              color: AppColors.white, fit: BoxFit.scaleDown),
+        ),
+        Visibility(
+          child: Text(label, style: TextStyle(color: Colors.black)),
+          maintainSize: true,
+          maintainAnimation: true,
+          maintainState: true,
+          visible: visibility,
+        ),
+      ]),
+    );
+  }
+}
+

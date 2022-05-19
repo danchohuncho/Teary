@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:teary/application/ui/themes/app_colors.dart';
-import 'package:teary/application/ui/widgets/action_button.dart';
 import '../../widgets/calendar.dart';
 import '../../widgets/notes_page_column/notes_page_column_widget.dart';
 
@@ -10,58 +9,51 @@ class NotesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverAppBar(
-          // expandedHeight: 100,
-          pinned: true,
-          title: Row(
-            children: [
-              IconButton(
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            // expandedHeight: 100,
+            pinned: true,
+            centerTitle: true,
+            leading: IconButton(
+              onPressed: () => null,
+              icon: SvgPicture.asset(
+                'assets/images/menu_icon.svg',
+                height: 36,
+                width: 36,
+              ),
+            ),
+            title: Text(
+              'Записи',
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
+            ),
+            actions: [IconButton(
                 onPressed: () => null,
                 icon: SvgPicture.asset(
-                  'assets/images/menu_icon.svg',
-                  height: 100,
-                  width: 100,
-                ),
-              ),
-              Expanded(
-                child: Center(
-                  child: Text(
-                    'Записи',
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
-                  ),
-                ),
-              ),
-              IconButton(
-                  onPressed: () => null,
-                  icon: SvgPicture.asset(
-                    'assets/images/calendar_icon.svg',
-                    height: 60,
-                    width: 60,
-                  )),
-            ],
+                  'assets/images/calendar_icon.svg',
+                  height: 48,
+                  width: 48,
+                )),],
           ),
-          flexibleSpace: const FlexibleSpaceBar(),
-        ),
-        SliverList(
-            delegate: SliverChildListDelegate([
-          Container(
-            child: const Calendar(),
-            color: AppColors.white,
-          ),
-          NotesPageColumnWidget.single(),
-          ActionButton(),
+          SliverList(
+              delegate: SliverChildListDelegate([
+            Container(
+              child: const Calendar(),
+              color: AppColors.white,
+            ),
+            NotesPageColumnWidget.single(),
 /*          Container(color: Colors.blue, height: 150.0),
-          Container(color: Colors.green, height: 150.0),
-          Container(color: Colors.red, height: 150.0),
-          Container(color: Colors.blue, height: 150.0),
-          Container(color: Colors.indigo, height: 150.0),
-          Container(color: Colors.cyan, height: 150.0),
-          Container(color: Colors.grey, height: 150.0),*/
-        ]))
-      ],
+            Container(color: Colors.green, height: 150.0),
+            Container(color: Colors.red, height: 150.0),
+            Container(color: Colors.blue, height: 150.0),
+            Container(color: Colors.indigo, height: 150.0),
+            Container(color: Colors.cyan, height: 150.0),
+            Container(color: Colors.grey, height: 150.0),*/
+          ]))
+        ],
+      ),
     );
   }
 }
