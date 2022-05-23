@@ -29,7 +29,7 @@ class _HomePageColumnSingleWidget extends HelpPageColumnWidget {
           img: "assets/images/breathing_illustration.png",
           title: title2,
           description: description2,
-          backgroundColor: AppColors.yellowBackground,
+          backgroundColor: AppColors.yellowTeary,
         ),
       ],
     );

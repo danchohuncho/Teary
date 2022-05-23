@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:teary/application/ui/themes/app_colors.dart';
 import 'package:teary/resources/resources.dart';
 
 import '../utils/progress_bar.dart';
@@ -41,14 +41,17 @@ class AddNewNotePage extends StatelessWidget {
                   children: [
                     Text(
                       'Расскажи, почему ты плакала сегодня ?',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                     ),
                     Container(
                         padding: EdgeInsets.fromLTRB(0, 28, 0, 8),
                         child: Text(
                           'Причина',
                           style: TextStyle(
-                              fontSize: 10, fontWeight: FontWeight.w400, color: Colors.black),
+                              fontSize: 10,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black),
                         )),
                     Container(
                       height: 30,
@@ -60,6 +63,64 @@ class AddNewNotePage extends StatelessWidget {
                     )
                   ],
                 )),
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                width: MediaQuery.of(context).size.width / 1.8,
+                height: 51.0,
+                margin: EdgeInsets.fromLTRB(0, 28, 0, 0),
+                decoration: BoxDecoration(
+                  color: AppColors.yellowTeary,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(50),
+                    bottomLeft: Radius.circular(50),
+                  ),
+                ),
+                child: Center(
+                    child: Text(
+                  'Что случилось ?',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                )),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(15.0, 13.0, 0, 0),
+              width: 290,
+              height: 210,
+              child: Stack(
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Container(
+                            padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                            child: Text(
+                              'Описание',
+                              style: TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
+                            )),
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Container(
+                          margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                          width: 290,
+                          height: 192,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12.0),
+                              border: Border.all(color: Colors.black)),
+                          child: TextField(),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

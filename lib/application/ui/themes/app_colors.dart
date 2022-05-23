@@ -17,6 +17,7 @@ abstract class AppColors {
   static const white88 = Color(0xE0FFFFFF);
   static const todayColor = Color(0xFFFE794E);
   static const violet = Color(0xFFA771EC);
+  static const red = Color(0xFFFF0000);
 
   //Calendar colors
   static const greyDayName = Color(0xFF7C7C7C);
@@ -24,7 +25,7 @@ abstract class AppColors {
   //HelpPageItemBackgroudColors
 
   static const violetBackground = Color(0xFFDCD0EC);
-  static const yellowBackground = Color(0xFFFFEDC6);
+  static const yellowTeary = Color(0xFFFFEDC6);
   static const greenBackground = Color(0xFFD4F4C9);
   static const mainBackground = Color(0xFFFAF5FF);
 }
