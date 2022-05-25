@@ -103,8 +103,8 @@ class FirstAddNewTearsPage extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(15.0, 13.0, 0, 0),
-                width: 290,
+                margin: EdgeInsets.fromLTRB(15.0, 13.0, 15.0, 0),
+                width: MediaQuery.of(context).size.width,
                 height: 210,
                 child: Stack(
                   children: [
@@ -127,7 +127,7 @@ class FirstAddNewTearsPage extends StatelessWidget {
                           alignment: Alignment.centerLeft,
                           child: Container(
                             margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                            width: 290,
+                            width: MediaQuery.of(context).size.width,
                             height: 192,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12.0),

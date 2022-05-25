@@ -14,7 +14,8 @@ class ThirdAddNewTearsPage extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: Svg('assets/images/circle.svg', color: AppColors.violet, size: Size(126.0, 126.0)),
+            image: Svg('assets/images/circle.svg',
+                color: AppColors.violet, size: Size(126.0, 126.0)),
             fit: BoxFit.none,
             alignment: Alignment.topRight,
           ),
@@ -32,66 +33,64 @@ class ThirdAddNewTearsPage extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    MyProgressBar(color: AppColors.statusBarGrey,),
-                    MyProgressBar(color: AppColors.statusBarGrey,),
-                    MyProgressBar(color: AppColors.statusBarBlack,),
+                    MyProgressBar(
+                      color: AppColors.statusBarGrey,
+                    ),
+                    MyProgressBar(
+                      color: AppColors.statusBarGrey,
+                    ),
+                    MyProgressBar(
+                      color: AppColors.statusBarBlack,
+                    ),
                   ],
                 ),
               ),
               Container(
-                  margin: EdgeInsets.fromLTRB(15.0, 45.0, 0, 0),
-                  height: 144.0,
-                  width: 193.0,
+                  margin: EdgeInsets.fromLTRB(15, 45, 15, 0),
+                  height: 208,
+                  width: MediaQuery.of(context).size.width,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        thirdTitlePage,
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w500),
+                      Container(
+                        width: 193,
+                        height: 44,
+                        child: Text(
+                          thirdTitlePage,
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w500),
+                        ),
                       ),
                       Container(
-                          padding: EdgeInsets.fromLTRB(0, 28, 0, 8),
-                          child: Text(
-                            reason,
-                            style: TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black),
-                          )),
-                      Container(
-                        height: 30,
-                        width: 193,
+                        height: 140,
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.fromLTRB(0, 24, 0, 0),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(color: Colors.black)),
-                        child: TextField(),
+                            border:
+                                Border.all(color: AppColors.textfieldStroke),
+                            color: AppColors.white),
+                        child: TextField(
+                          keyboardType: TextInputType.multiline,
+                          maxLines: null,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                          ),
+                        ),
                       )
                     ],
                   )),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 1.8,
-                  height: 51.0,
-                  margin: EdgeInsets.fromLTRB(0, 28, 0, 0),
-                  decoration: BoxDecoration(
-                    color: AppColors.yellowTeary,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(50),
-                      bottomLeft: Radius.circular(50),
-                    ),
-                  ),
-                  child: Center(
-                      child: Text(
-                    thirdAnswerPage,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                  )),
+              Container(
+                margin: EdgeInsets.fromLTRB(15, 29, 0, 0),
+                width: 290,
+                child: Text(
+                  thirdAnswerPage,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(15.0, 13.0, 0, 0),
-                width: 290,
+                margin: EdgeInsets.fromLTRB(15.0, 13.0, 15.0, 0),
+                width: MediaQuery.of(context).size.width,
                 height: 210,
                 child: Stack(
                   children: [
@@ -101,27 +100,20 @@ class ThirdAddNewTearsPage extends StatelessWidget {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Container(
-                              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                              child: Text(
-                                description,
-                                style: TextStyle(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black),
-                              )),
-                        ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Container(
                             margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                            width: 290,
+                            width: MediaQuery.of(context).size.width,
                             height: 192,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12.0),
-                                border: Border.all(color: Colors.black)),
+                                border: Border.all(
+                                    color: AppColors.textfieldStroke),
+                                color: AppColors.white),
                             child: TextField(
                               keyboardType: TextInputType.multiline,
                               maxLines: null,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                              ),
                             ),
                           ),
                         )
@@ -156,7 +148,3 @@ class ThirdAddNewTearsPage extends StatelessWidget {
     );
   }
 }
-
-
-
-

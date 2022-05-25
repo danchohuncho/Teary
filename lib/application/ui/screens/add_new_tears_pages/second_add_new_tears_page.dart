@@ -46,7 +46,7 @@ class SecondAddNewTearsPage extends StatelessWidget {
                 ),
               ),
               Container(
-                  margin: EdgeInsets.fromLTRB(15, 45.0, 15, 0),
+                  margin: EdgeInsets.fromLTRB(15.0, 45.0, 15.0, 0),
                   height: 208.0,
                   width: MediaQuery.of(context).size.width,
                   child: Column(
@@ -64,7 +64,7 @@ class SecondAddNewTearsPage extends StatelessWidget {
                       Container(
                         height: 140,
                         margin: EdgeInsets.fromLTRB(0, 24.0, 0, 0),
-                        padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                        padding: EdgeInsets.fromLTRB(10.0, 0, 0, 0),
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12.0),
