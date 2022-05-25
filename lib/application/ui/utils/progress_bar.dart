@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class MyProgressBar extends StatelessWidget {
-  const MyProgressBar({Key? key}) : super(key: key);
+  var color;
+
+  MyProgressBar({Key? key, required this.color}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +16,6 @@ class MyProgressBar extends StatelessWidget {
         constraints: BoxConstraints(
           minWidth: MediaQuery.of(context).size.width / 3,
         ),
-        child: SvgPicture.asset('assets/images/line.svg', color: Colors.black,));
+        child: SvgPicture.asset('assets/images/line.svg', color: color,));
   }
 }

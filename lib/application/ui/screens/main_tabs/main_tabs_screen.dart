@@ -1,13 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:teary/application/ui/screens/add_new_tears_pages/first_add_new_tears_page.dart';
 import 'package:teary/application/ui/screens/main_tabs/main_tabs_view_model.dart';
 import 'package:teary/application/ui/screens/main_tabs/notes_widget.dart';
 import 'package:teary/application/ui/screens/main_tabs/help_page_widget.dart';
 
-import '../../widgets/action_button.dart';
-import '../../widgets/add_new_note_page.dart';
+
+
 
 class MainTabsScreen extends StatelessWidget {
   const MainTabsScreen({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class MainTabsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AddNewNotePage(),
+      body: FirstAddNewTearsPage(),
 /*      body: _BodyWidget(),
       floatingActionButton: ActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

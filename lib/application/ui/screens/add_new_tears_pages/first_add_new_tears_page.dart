@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:teary/application/ui/themes/app_colors.dart';
-import 'package:teary/resources/resources.dart';
+import 'package:teary/resources/strings.dart';
+import '../../utils/progress_bar.dart';
+import '../../widgets/add_new_tears_pages_widgets/save_and_next_buttons.dart';
 
-import '../utils/progress_bar.dart';
-
-class AddNewNotePage extends StatelessWidget {
-  const AddNewNotePage({Key? key}) : super(key: key);
+class FirstAddNewTearsPage extends StatelessWidget {
+  const FirstAddNewTearsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,8 @@ class AddNewNotePage extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(AppImages.circle),
+            image: Svg('assets/images/circle.svg',
+                color: AppColors.orange, size: Size(126.0, 126.0)),
             fit: BoxFit.none,
             alignment: Alignment.topRight,
           ),
@@ -31,9 +33,15 @@ class AddNewNotePage extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    MyProgressBar(),
-                    MyProgressBar(),
-                    MyProgressBar(),
+                    MyProgressBar(
+                      color: AppColors.statusBarBlack,
+                    ),
+                    MyProgressBar(
+                      color: AppColors.statusBarGrey,
+                    ),
+                    MyProgressBar(
+                      color: AppColors.statusBarGrey,
+                    ),
                   ],
                 ),
               ),
@@ -45,14 +53,14 @@ class AddNewNotePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Расскажи, почему ты плакала сегодня ?',
+                        firstTitlePage,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w500),
                       ),
                       Container(
                           padding: EdgeInsets.fromLTRB(0, 28, 0, 8),
                           child: Text(
-                            'Причина',
+                            reason,
                             style: TextStyle(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w400,
@@ -62,10 +70,16 @@ class AddNewNotePage extends StatelessWidget {
                         height: 30,
                         width: 193,
                         decoration: BoxDecoration(
+                            color: AppColors.white,
                             borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(color: Colors.black)),
-                        child: TextField(),
-                      )
+                            border:
+                                Border.all(color: AppColors.textfieldStroke)),
+                        child: TextField(
+                          keyboardType: TextInputType.multiline,
+                          maxLines: null,
+                          decoration: InputDecoration(border: InputBorder.none),
+                        ),
+                      ),
                     ],
                   )),
               Align(
@@ -83,7 +97,7 @@ class AddNewNotePage extends StatelessWidget {
                   ),
                   child: Center(
                       child: Text(
-                    'Что случилось ?',
+                    firstAnswerPage,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                   )),
                 ),
@@ -102,7 +116,7 @@ class AddNewNotePage extends StatelessWidget {
                           child: Container(
                               padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                               child: Text(
-                                'Описание',
+                                description,
                                 style: TextStyle(
                                     fontSize: 10,
                                     fontWeight: FontWeight.w400,
@@ -117,8 +131,15 @@ class AddNewNotePage extends StatelessWidget {
                             height: 192,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12.0),
-                                border: Border.all(color: Colors.black)),
-                            child: TextField(),
+                                color: AppColors.white,
+                                border: Border.all(
+                                    color: AppColors.textfieldStroke)),
+                            child: TextField(
+                              keyboardType: TextInputType.multiline,
+                              maxLines: null,
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
+                            ),
                           ),
                         )
                       ],
@@ -129,27 +150,22 @@ class AddNewNotePage extends StatelessWidget {
               //BUTTON SAVE AND NEXT
 
               Expanded(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width/2.5, 0, MediaQuery.of(context).size.width/6, 16),
-                      width: 114.0,
-                      height: 45.0,
-                      color: AppColors.red,
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  fit: StackFit.passthrough,
+                  children: <Widget>[
+                    Positioned(
+                      bottom: 16,
+                      child: SaveButton(),
                     ),
-                    Container(
-                      alignment: Alignment.bottomRight,
-                      margin: EdgeInsets.fromLTRB(43, 0, 0, 16),
-                      width: 45.0,
-                      height: 45.0,
-                      color: AppColors.green,
-                    )
+                    Positioned(
+                      right: 15,
+                      bottom: 16,
+                      child: NextButton(),
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

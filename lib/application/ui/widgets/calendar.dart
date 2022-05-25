@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:intl/date_symbol_data_local.dart';
 import 'package:teary/application/ui/themes/app_colors.dart';
 
 class Calendar extends StatefulWidget {
@@ -63,7 +61,7 @@ class _CalendarState extends State<Calendar> {
           // shape: BoxShape.circle,
           // borderRadius: 4;
         ),
-        todayTextStyle: TextStyle(color: AppColors.todayColor, fontWeight: FontWeight.w800,fontSize: 16),
+        todayTextStyle: TextStyle(color: AppColors.orange, fontWeight: FontWeight.w800,fontSize: 16),
 
         defaultTextStyle: TextStyle(fontWeight: FontWeight.w500, color: Colors.black),
         weekendTextStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),

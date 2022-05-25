@@ -136,6 +136,13 @@ packages:
       name: flutter_svg
       url: "https://pub.dartlang.org"
     source: hosted
+    version: "1.1.0"
+  flutter_svg_provider:
+    dependency: "direct main"
+    description:
+      name: flutter_svg_provider
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "1.0.3"
   flutter_test:
     dependency: "direct dev"
@@ -370,7 +377,7 @@ packages:
       name: xml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.4.1"
+    version: "6.1.0"
   yaml:
     dependency: transitive
     description:
@@ -379,5 +386,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.17.0-0 <3.0.0"
-  flutter: ">=2.4.0-0.0.pre"
+  dart: ">=2.17.0 <3.0.0"
+  flutter: ">=2.11.0-0.1.pre"
