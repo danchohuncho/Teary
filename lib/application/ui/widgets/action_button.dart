@@ -58,9 +58,9 @@ class _ActionButtonState extends State<ActionButton>
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
+/*      height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      color: Colors.black.withOpacity(opacityRatio),
+      color: Colors.black.withOpacity(opacityRatio),*/
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Container(
@@ -179,32 +179,37 @@ class _ActionButtonItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedAlign(
-      duration:
-          toggle ? Duration(milliseconds: 275) : Duration(milliseconds: 875),
-      alignment: alignment,
-      curve: toggle ? Curves.easeIn : Curves.elasticOut,
-      child: Column(mainAxisSize: MainAxisSize.min, children: [
-        AnimatedContainer(
-          duration: Duration(milliseconds: 275),
-          curve: toggle ? Curves.easeIn : Curves.easeOut,
-          height: size,
-          width: size,
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(40.0),
+    return GestureDetector(
+      onTap: () {
+        print('213');
+      },
+      child: AnimatedAlign(
+        duration:
+            toggle ? Duration(milliseconds: 275) : Duration(milliseconds: 875),
+        alignment: alignment,
+        curve: toggle ? Curves.easeIn : Curves.elasticOut,
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          AnimatedContainer(
+            duration: Duration(milliseconds: 275),
+            curve: toggle ? Curves.easeIn : Curves.easeOut,
+            height: size,
+            width: size,
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(40.0),
+            ),
+            child: SvgPicture.asset(imgSource,
+                color: AppColors.white, fit: BoxFit.scaleDown),
           ),
-          child: SvgPicture.asset(imgSource,
-              color: AppColors.white, fit: BoxFit.scaleDown),
-        ),
-        Visibility(
-          child: Text(label, style: TextStyle(color: Colors.black)),
-          maintainSize: true,
-          maintainAnimation: true,
-          maintainState: true,
-          visible: visibility,
-        ),
-      ]),
+          Visibility(
+            child: Text(label, style: TextStyle(color: Colors.black)),
+            maintainSize: true,
+            maintainAnimation: true,
+            maintainState: true,
+            visible: visibility,
+          ),
+        ]),
+      ),
     );
   }
 }

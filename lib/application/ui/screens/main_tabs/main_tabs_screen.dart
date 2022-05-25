@@ -5,10 +5,7 @@ import 'package:teary/application/ui/screens/main_tabs/main_tabs_view_model.dart
 import 'package:teary/application/ui/screens/main_tabs/notes_widget.dart';
 import 'package:teary/application/ui/screens/main_tabs/help_page_widget.dart';
 
-import '../add_new_tears_pages/third_add_new_tears_page.dart';
-
-
-
+import '../../widgets/action_button.dart';
 
 class MainTabsScreen extends StatelessWidget {
   const MainTabsScreen({Key? key}) : super(key: key);
@@ -16,11 +13,10 @@ class MainTabsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ThirdAddNewTearsPage(),
-/*      body: _BodyWidget(),
+      body: _BodyWidget(),
       floatingActionButton: ActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: _NavBarWidget(),*/
+      bottomNavigationBar: _NavBarWidget(),
     );
   }
 }
