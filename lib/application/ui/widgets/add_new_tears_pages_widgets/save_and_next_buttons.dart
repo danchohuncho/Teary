@@ -11,8 +11,8 @@ class SaveButton extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        width: 114.0,
-        height: 45.0,
+        width: 134.0,
+        height: 49.0,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           boxShadow: [
@@ -27,12 +27,12 @@ class SaveButton extends StatelessWidget {
         ),
         child: Center(
             child: Text(
-              saveButton,
-              style: TextStyle(
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.textBlack),
-            )),
+          saveButton,
+          style: TextStyle(
+              fontSize: 14.0,
+              fontWeight: FontWeight.w500,
+              color: AppColors.textBlack),
+        )),
       ),
     );
   }
@@ -46,11 +46,25 @@ class NextButton extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        width: 45.0,
-        height: 45.0,
-        decoration: BoxDecoration(color: AppColors.darkViolet, shape: BoxShape.circle),
+        width: 49.0,
+        height: 49.0,
+        decoration: BoxDecoration(
+          color: AppColors.darkViolet,
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.black.withOpacity(0.25),
+              spreadRadius: 0,
+              blurRadius: 8,
+              offset: Offset(0, 2),
+            )
+          ],
+        ),
         child: Center(
-            child: Icon(Icons.arrow_forward_ios_rounded, color: AppColors.white,)),
+            child: Icon(
+          Icons.arrow_forward_ios_rounded,
+          color: AppColors.white,
+        )),
       ),
     );
   }

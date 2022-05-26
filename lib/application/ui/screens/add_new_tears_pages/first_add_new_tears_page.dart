@@ -47,22 +47,22 @@ class FirstAddNewTearsPage extends StatelessWidget {
               ),
               Container(
                   margin: EdgeInsets.fromLTRB(15.0, 45.0, 0, 0),
-                  height: 144.0,
-                  width: 193.0,
+                  width: 210.0,
+                  height: 168.0,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         firstTitlePage,
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w500),
+                            fontSize: 20, fontWeight: FontWeight.w500),
                       ),
                       Container(
-                          padding: EdgeInsets.fromLTRB(0, 28, 0, 8),
+                          margin: EdgeInsets.fromLTRB(0, 24, 0, 10),
                           child: Text(
                             reason,
                             style: TextStyle(
-                                fontSize: 10,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.black),
                           )),
@@ -87,7 +87,7 @@ class FirstAddNewTearsPage extends StatelessWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width / 1.8,
                   height: 51.0,
-                  margin: EdgeInsets.fromLTRB(0, 28, 0, 0),
+                  margin: EdgeInsets.fromLTRB(0, 56, 0, 0),
                   decoration: BoxDecoration(
                     color: AppColors.yellowTeary,
                     borderRadius: BorderRadius.only(
@@ -98,14 +98,14 @@ class FirstAddNewTearsPage extends StatelessWidget {
                   child: Center(
                       child: Text(
                     firstAnswerPage,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   )),
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(15.0, 13.0, 15.0, 0),
+                margin: EdgeInsets.fromLTRB(15.0, 32.0, 15.0, 0),
                 width: MediaQuery.of(context).size.width,
-                height: 210,
+                height: 227,
                 child: Stack(
                   children: [
                     Column(
@@ -114,11 +114,11 @@ class FirstAddNewTearsPage extends StatelessWidget {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Container(
-                              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                              padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                               child: Text(
                                 description,
                                 style: TextStyle(
-                                    fontSize: 10,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                     color: Colors.black),
                               )),
@@ -155,12 +155,12 @@ class FirstAddNewTearsPage extends StatelessWidget {
                   fit: StackFit.passthrough,
                   children: <Widget>[
                     Positioned(
-                      bottom: 16,
+                      bottom: 36,
                       child: SaveButton(),
                     ),
                     Positioned(
-                      right: 15,
-                      bottom: 16,
+                      right: 36,
+                      bottom: 36,
                       child: NextButton(),
                     ),
                   ],
