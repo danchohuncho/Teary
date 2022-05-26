@@ -15,7 +15,7 @@ const String saveButton = 'Сохранить';
 const String reason = 'Причина';
 const String description = 'Описание';
 
-const String firstTitlePage = 'Расскажи, почему ты плакала сегодня ?';
+const String firstTitlePage = 'Расскажи,\nпочему ты плакала сегодня ?';
 const String firstAnswerPage = 'Что случилось ?';
 const String secondTitlePage = 'Какие мысли тебя посещали ?';
 const String secondAnswerPage = 'Какие чувства ?';
