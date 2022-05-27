@@ -3,8 +3,39 @@ import 'package:flutter/material.dart';
 import '../../../../resources/strings.dart';
 import '../../themes/app_colors.dart';
 
-class SaveButton extends StatelessWidget {
-  const SaveButton({Key? key}) : super(key: key);
+
+class BottomBarButtons extends StatelessWidget {
+  const BottomBarButtons({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 90,
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        fit: StackFit.passthrough,
+        children: <Widget>[
+          Positioned(
+            bottom: 36,
+            child: _SaveButton(),
+          ),
+          Positioned(
+            right: 36,
+            bottom: 36,
+            child: _NextButton(),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+class _SaveButton extends StatelessWidget {
+  const _SaveButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +69,8 @@ class SaveButton extends StatelessWidget {
   }
 }
 
-class NextButton extends StatelessWidget {
-  const NextButton({Key? key}) : super(key: key);
+class _NextButton extends StatelessWidget {
+  const _NextButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

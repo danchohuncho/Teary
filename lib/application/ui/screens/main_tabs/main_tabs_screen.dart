@@ -14,6 +14,7 @@ class MainTabsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
     body: FirstAddNewTearsPage());
 /*      body: _BodyWidget(),
       floatingActionButton: ActionButton(),
