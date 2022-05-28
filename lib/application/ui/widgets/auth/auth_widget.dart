@@ -41,12 +41,12 @@ class _HeaderWidget extends StatelessWidget {
             height: 25,
           ),
           Text(
-              'Чтобы пользоваться правкой и возможностями рейтинга TMDB, а также получить персональные рекомендации, необходимо войти в свою учётную запись. Если у вас нет учётной записи, её регистрация является бесплатной и простой. '),
+              '---'),
           SizedBox(height: 5,),
           ElevatedButton(onPressed: (){}, child: Text('Регистрация')),
           SizedBox(height: 25,),
           Text(
-              'Если Вы зарегистрировались, но не получили письмо для подтверждения, '),
+              '==='),
           SizedBox(height: 5,),
           ElevatedButton(onPressed: (){}, child: Text('Подтвердить почту')),
         ],

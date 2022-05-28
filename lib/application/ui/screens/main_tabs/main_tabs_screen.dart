@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:teary/application/ui/screens/add_new_tears_pages/first_add_new_tears_page.dart';
+import 'package:teary/application/ui/screens/add_new_tears_pages/second_add_new_tears_page.dart';
 import 'package:teary/application/ui/screens/main_tabs/main_tabs_view_model.dart';
 import 'package:teary/application/ui/screens/main_tabs/notes_widget.dart';
 import 'package:teary/application/ui/screens/main_tabs/help_page_widget.dart';
@@ -15,7 +16,7 @@ class MainTabsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-    body: FirstAddNewTearsPage());
+    body: SecondAddNewTearsPage());
 /*      body: _BodyWidget(),
       floatingActionButton: ActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

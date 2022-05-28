@@ -16,11 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Teary',
       theme: AppTheme.light,
-      home: AuthWidget(),
-/*
       routes: mainNavigation.routes,
       onGenerateRoute: mainNavigation.onGenerateRoute,
-*/
 
     ) ;
   }
