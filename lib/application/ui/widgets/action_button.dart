@@ -57,6 +57,7 @@ class _ActionButtonState extends State<ActionButton>
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
 /*      height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
@@ -95,8 +96,8 @@ class _ActionButtonState extends State<ActionButton>
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 375),
                       curve: Curves.easeOut,
-                      height: toggle ? 70.0 : 60.0,
-                      width: toggle ? 70.0 : 60.0,
+                      height: toggle ? 70.0 : 70.0,
+                      width: toggle ? 70.0 : 70.0,
                       decoration: BoxDecoration(
                         color: buttonColor,
                         borderRadius: BorderRadius.circular(60.0),
@@ -174,14 +175,18 @@ class _ActionButtonItem extends StatelessWidget {
   final double size;
   final String imgSource;
   final String label;
-  final color;
-  final visibility;
+  final Color color;
+  final bool visibility;
+
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('213');
+        final navigator = Navigator.of(context);
+        navigator.pushNamed('/addTearsFirstPage');
+        toggle = !toggle;
+        blurRatio = 0.001;
       },
       child: AnimatedAlign(
         duration:
