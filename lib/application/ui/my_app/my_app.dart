@@ -1,14 +1,11 @@
-
-
-import 'package:flutter/services.dart';
 import 'package:teary/application/ui/navigation/main_navigation.dart';
 import 'package:teary/application/ui/themes/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:teary/application/ui/widgets/auth/auth_widget.dart';
 
 class MyApp extends StatelessWidget {
   final mainNavigation = MainNavigation();
-  MyApp({Key? key}): super(key: key);
+
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +13,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Teary',
       theme: AppTheme.light,
+      // home: AuthWidget(),
       routes: mainNavigation.routes,
-      onGenerateRoute: mainNavigation.onGenerateRoute,
+/*      routes: {
+        '/': (context) => MainTabsScreen(),
+        '/add_tears': (context) => FirstAddNewTearsPage(),
 
-    ) ;
+      },
+      initialRoute: '/',*/
+      initialRoute: '/',
+      // onGenerateRoute: mainNavigation.onGenerateRoute,
+    );
   }
 }

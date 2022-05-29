@@ -8,4 +8,5 @@ class ScreenFactory {
         create: (_) => MainTabsViewModel(),
         child: const MainTabsScreen(),
       );
+
 }
