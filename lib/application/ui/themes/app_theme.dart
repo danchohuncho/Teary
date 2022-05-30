@@ -42,6 +42,10 @@ abstract class AppTheme {
       selectedItemColor: Color(0xFF1C1C1C),
       unselectedItemColor: Color(0x801C1C1C),
     ),
+    textSelectionTheme: TextSelectionThemeData(
+      selectionColor: Color(0xFFE9DEF9),
+      selectionHandleColor: AppColors.green,
+    ),
     fontFamily: 'Montserrat',
   );
 }

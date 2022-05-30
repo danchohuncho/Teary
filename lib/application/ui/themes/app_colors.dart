@@ -20,7 +20,7 @@ abstract class AppColors {
   static const orange = Color(0xFFFE794E);
   static const violet = Color(0xFFA771EC);
   static const darkViolet = Color(0xFF5E3998);
-  static const textfieldStroke = Color(0xFFE8E3E3);
+  static const textFieldBorder = Color(0xFFE8E3E3);
   static const red = Color(0xFFFF0000);
   static const saveButtonColor = Color(0xFFE7E7E7);
 
