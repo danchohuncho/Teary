@@ -42,7 +42,6 @@ class FirstAddNewTearsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Container(
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -59,7 +58,7 @@ class FirstAddNewTearsPage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                        margin: EdgeInsets.fromLTRB(15.0, 45.0, 0, 0),
+                        margin: EdgeInsets.fromLTRB(20.0, 45.0, 0, 0),
                         width: 210.0,
                         height: 168.0,
                         child: Column(
@@ -71,7 +70,7 @@ class FirstAddNewTearsPage extends StatelessWidget {
                                   fontSize: 20, fontWeight: FontWeight.w500),
                             ),
                             Container(
-                                margin: EdgeInsets.fromLTRB(0, 24, 0, 10),
+                                margin: EdgeInsets.fromLTRB(0, 24, 0, 7),
                                 child: Text(
                                   reason,
                                   style: TextStyle(
@@ -79,19 +78,30 @@ class FirstAddNewTearsPage extends StatelessWidget {
                                       fontWeight: FontWeight.w400,
                                       color: Colors.black),
                                 )),
-                            Container(
-                              height: 30,
-                              width: 193,
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  border: Border.all(
-                                      color: AppColors.textfieldStroke)),
+                            SizedBox(
+                              height: 36,
                               child: TextField(
-                                keyboardType: TextInputType.multiline,
-                                maxLines: null,
-                                decoration:
-                                    InputDecoration(border: InputBorder.none),
+                                maxLines: 1,
+                                cursorColor: AppColors.black,
+                                textCapitalization:
+                                    TextCapitalization.sentences,
+                                enabled: true,
+                                style: TextStyle(fontSize: 16),
+                                decoration: InputDecoration(
+                                  filled: true,
+                                  fillColor: AppColors.white,
+                                  focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                      borderSide: BorderSide(
+                                          color: AppColors.textFieldBorder)),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                    borderSide: BorderSide(
+                                        color: AppColors.textFieldBorder),
+                                  ),
+                                  contentPadding:
+                                      EdgeInsets.fromLTRB(12, 5, 0, 5),
+                                ),
                               ),
                             ),
                           ],
@@ -118,9 +128,9 @@ class FirstAddNewTearsPage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(15.0, 32.0, 15.0, 0),
+                      margin: EdgeInsets.fromLTRB(20.0, 32.0, 20.0, 0),
                       width: MediaQuery.of(context).size.width,
-                      height: 227,
+                      height: 266,
                       child: Stack(
                         children: [
                           Column(
@@ -140,20 +150,29 @@ class FirstAddNewTearsPage extends StatelessWidget {
                               ),
                               Align(
                                 alignment: Alignment.centerLeft,
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                                  width: MediaQuery.of(context).size.width,
-                                  height: 192,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      color: AppColors.white,
-                                      border: Border.all(
-                                          color: AppColors.textfieldStroke)),
+                                child: SizedBox(
+                                  height: 239,
                                   child: TextField(
+                                    cursorColor: AppColors.black,
+                                    textCapitalization:
+                                    TextCapitalization.sentences,
+                                    enabled: true,
                                     keyboardType: TextInputType.multiline,
-                                    maxLines: null,
+                                    maxLines: 8,
+                                    minLines: 5,
+                                    style: TextStyle(fontSize: 16),
                                     decoration: InputDecoration(
-                                        border: InputBorder.none),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                        borderSide: BorderSide(
+                                            color: AppColors.red),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                        borderSide: BorderSide(
+                                            color: AppColors.red),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               )

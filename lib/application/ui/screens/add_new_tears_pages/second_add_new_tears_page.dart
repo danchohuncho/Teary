@@ -83,7 +83,7 @@ class SecondAddNewTearsPage extends StatelessWidget {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12.0),
                                   border: Border.all(
-                                      color: AppColors.textfieldStroke),
+                                      color: AppColors.textFieldBorder),
                                   color: AppColors.white),
                               child: TextField(
                                 keyboardType: TextInputType.multiline,
@@ -136,7 +136,7 @@ class SecondAddNewTearsPage extends StatelessWidget {
                                       color: AppColors.white,
                                       borderRadius: BorderRadius.circular(12.0),
                                       border: Border.all(
-                                          color: AppColors.textfieldStroke)),
+                                          color: AppColors.textFieldBorder)),
                                   child: TextField(
                                     keyboardType: TextInputType.multiline,
                                     maxLines: null,
