@@ -25,7 +25,7 @@ abstract class AppColors {
   static const saveButtonColor = Color(0xFFE7E7E7);
 
   //Calendar colors
-  static const greyDayName = Color(0xFF7C7C7C);
+  static const greyText = Color(0xFF7C7C7C);
 
   //HelpPageItemBackgroundColors
   static const violetBackground = Color(0xFFDCD0EC);
