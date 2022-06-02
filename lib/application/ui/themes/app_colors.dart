@@ -23,8 +23,6 @@ abstract class AppColors {
   static const textFieldBorder = Color(0xFFE8E3E3);
   static const red = Color(0xFFFF0000);
   static const saveButtonColor = Color(0xFFE7E7E7);
-
-  //Calendar colors
   static const greyText = Color(0xFF7C7C7C);
 
   //HelpPageItemBackgroundColors
