@@ -6,16 +6,21 @@ class MyProgressBar extends StatelessWidget {
 
   MyProgressBar({Key? key, required this.color}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: 20,
-        width: MediaQuery.of(context).size.width / 3.2,
-        padding: EdgeInsets.fromLTRB(13, 10, 13, 0),
-        constraints: BoxConstraints(
-          minWidth: MediaQuery.of(context).size.width / 3,
-        ),
-        child: SvgPicture.asset('assets/images/line.svg', color: color,));
+    return Expanded(
+      flex: 1,
+      child: Container(
+          height: 20,
+          width: MediaQuery.of(context).size.width / 3.2,
+          padding: EdgeInsets.fromLTRB(0, 0, 13, 0),
+          constraints: BoxConstraints(
+            minWidth: MediaQuery.of(context).size.width / 3,
+          ),
+          child: SvgPicture.asset(
+            'assets/images/line.svg',
+            color: color,
+          )),
+    );
   }
 }

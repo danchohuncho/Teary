@@ -74,6 +74,7 @@ class _ActionButtonState extends State<ActionButton>
             child: Stack(
               children: [
                 _ActionButtonItem(
+                  navigatorName: "/addTearsFirstPage",
                   alignment: alignment1,
                   size: size1,
                   imgSource: 'assets/images/action_tears_icon.svg',
@@ -82,6 +83,7 @@ class _ActionButtonState extends State<ActionButton>
                   visibility: visibilityTag,
                 ),
                 _ActionButtonItem(
+                  navigatorName: "/firstTearsPage",
                   alignment: alignment2,
                   size: size2,
                   imgSource: 'assets/images/action_notes_icon.svg',
@@ -169,6 +171,7 @@ class _ActionButtonItem extends StatelessWidget {
     required this.label,
     required this.color,
     required this.visibility,
+    required this.navigatorName,
   }) : super(key: key);
 
   final Alignment alignment;
@@ -177,6 +180,7 @@ class _ActionButtonItem extends StatelessWidget {
   final String label;
   final Color color;
   final bool visibility;
+  final navigatorName;
 
 
   @override
@@ -184,7 +188,7 @@ class _ActionButtonItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         final navigator = Navigator.of(context);
-        navigator.pushNamed('/addTearsFirstPage');
+        navigator.pushNamed(navigatorName);
         toggle = !toggle;
         blurRatio = 0.001;
       },

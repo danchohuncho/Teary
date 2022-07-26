@@ -156,7 +156,7 @@ class _FormWidgetState extends State<_FormWidget> {
                   isCollapsed: true,
                   focusColor: borderColor,
                   labelText: 'Логин',
-                  labelStyle: TextStyle(color: AppColors.greyText)),
+                  labelStyle: TextStyle(color: AppColors.greyText7C)),
             ),
           ),
           const SizedBox(
@@ -180,7 +180,7 @@ class _FormWidgetState extends State<_FormWidget> {
                   isCollapsed: true,
                   focusColor: borderColor,
                   labelText: 'Пароль',
-                  labelStyle: TextStyle(color: AppColors.greyText)),
+                  labelStyle: TextStyle(color: AppColors.greyText7C)),
               obscureText: true,
             ),
           ),

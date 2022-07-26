@@ -23,7 +23,9 @@ abstract class AppColors {
   static const textFieldBorder = Color(0xFFE8E3E3);
   static const red = Color(0xFFFF0000);
   static const saveButtonColor = Color(0xFFE7E7E7);
-  static const greyText = Color(0xFF7C7C7C);
+  static const greyText7C = Color(0xFF7C7C7C);
+  static const greyText41 = Color(0xFF414141);
+  static const greyBorder = Color(0xFFE2DDDD);
 
   //HelpPageItemBackgroundColors
   static const violetBackground = Color(0xFFDCD0EC);

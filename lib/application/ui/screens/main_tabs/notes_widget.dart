@@ -45,6 +45,19 @@ class NotesWidget extends StatelessWidget {
               child: const Calendar(),
               color: AppColors.white,
             ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed("/loginScreen");
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 100,
+                height: 100,
+                decoration:
+                    BoxDecoration(border: Border.all(color: AppColors.black)),
+                child: Text('ЛОГИН'),
+              ),
+            ),
             NotesPageColumnWidget.single(),
 /*          Container(color: Colors.blue, height: 150.0),
             Container(color: Colors.green, height: 150.0),
