@@ -1,56 +1,66 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:teary/application/ui/themes/app_colors.dart';
-import 'package:teary/application/ui/utils/textfield_padding.dart';
+import 'Widgets/auth_textfield.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 10,
-          ),
-          SvgPicture.asset(
-            "assets/images/tears_icon.svg",
-            semanticsLabel: 'SVG From asset folder',
-            fit: BoxFit.scaleDown,
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 16,
-          ),
-          _FormWidget(),
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.only(bottom: 40),
-              alignment: Alignment.bottomCenter,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Нет аккаунта ?',
-                    style: TextStyle(
-                        color: AppColors.greyText41,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Регистрация',
-                        style: TextStyle(
-                            color: AppColors.orange,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                      ))
-                ],
-              ),
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+            colors: [AppColors.mainBackground, AppColors.white],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.3, 1.0],
+            tileMode: TileMode.clamp),
+      ),
+      child: Scaffold(
+        body: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 10,
             ),
-          )
-        ],
+            SvgPicture.asset(
+              "assets/images/tears_icon.svg",
+              semanticsLabel: 'SVG From asset folder',
+              fit: BoxFit.scaleDown,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 16,
+            ),
+            const _FormWidget(),
+            Expanded(
+              child: Container(
+                margin: const EdgeInsets.only(bottom: 40),
+                alignment: Alignment.bottomCenter,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Нет аккаунта ?',
+                      style: TextStyle(
+                          color: AppColors.greyText41,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'Регистрация',
+                          style: TextStyle(
+                              color: AppColors.orange,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500),
+                        ))
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -67,14 +77,13 @@ class _FormWidgetState extends State<_FormWidget> {
   final _loginTextController = TextEditingController();
   final _passwordTextController = TextEditingController();
 
-  String? errorText = null;
+  String? errorText;
 
   _auth() {
     final login = _loginTextController.text;
     final password = _passwordTextController.text;
     if (login == 'admin' && password == 'admin') {
       errorText = null;
-      print('open app');
       Navigator.of(context).pushNamed("/");
     } else {
       errorText = 'Не верный логин или пароль';
@@ -83,111 +92,77 @@ class _FormWidgetState extends State<_FormWidget> {
   }
 
   void _resetPassword() {
-    print('Сбросить');
+    //print('Сбросить');
   }
 
   @override
   Widget build(BuildContext context) {
-    const borderColor = AppColors.white;
-
-    const textFieldBorderStyle = OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(24)),
-      borderSide: BorderSide(color: AppColors.greyText7C),
-    );
-
     final errorText = this.errorText;
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Вход',
-            style: TextStyle(color: AppColors.black, fontSize: 20),
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 16,
-          ),
-          SizedBox(
-            width: 270,
-            height: 40,
-            child: TextField(
-              cursorColor: AppColors.black,
-              controller: _loginTextController,
-              decoration: InputDecoration(
-                  border: textFieldBorderStyle,
-                  focusedBorder: textFieldBorderStyle,
-                  enabledBorder: textFieldBorderStyle,
-                  contentPadding: contentPadding.input,
-                  isCollapsed: true,
-                  focusColor: borderColor,
-                  labelText: 'E-mail',
-                  labelStyle: TextStyle(color: AppColors.greyText7C)),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          'Вход',
+          style: TextStyle(color: AppColors.black, fontSize: 20),
+        ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height / 16,
+        ),
+        AuthTextField(
+          labelText: 'E-mail',
+          textController: _loginTextController,
+          obscureText: false,
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        AuthTextField(
+          labelText: 'Пароль',
+          textController: _passwordTextController,
+          obscureText: true,
+        ),
+        Container(
+          width: 270,
+          alignment: Alignment.centerRight,
+          child: TextButton(
+              onPressed: () {},
+              child: const Text(
+                'Забыли пароль ?',
+                style: TextStyle(color: AppColors.greyText7C),
+              )),
+        ),
+        const SizedBox(height: 33),
+        GestureDetector(
+          onTap: () {
+            _auth();
+          },
+          child: Container(
+            width: 207,
+            height: 49,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                color: AppColors.green,
+                borderRadius: BorderRadius.circular(50)),
+            child: const Text(
+              'Далее',
+              style: TextStyle(color: AppColors.white),
             ),
           ),
-          SizedBox(
-            height: 30,
-          ),
-          SizedBox(
-            width: 270.00,
-            height: 40.00,
-            child: TextField(
-              cursorColor: AppColors.black,
-              controller: _passwordTextController,
-              decoration: InputDecoration(
-                  border: textFieldBorderStyle,
-                  focusedBorder: textFieldBorderStyle,
-                  enabledBorder: textFieldBorderStyle,
-                  contentPadding: contentPadding.input,
-                  isCollapsed: true,
-                  focusColor: borderColor,
-                  labelText: 'Пароль',
-                  labelStyle: TextStyle(color: AppColors.greyText7C)),
-              obscureText: true,
-            ),
-          ),
+        ),
+        if (errorText != null)
           Container(
-            width: 270,
-            alignment: Alignment.centerRight,
-            child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Забыли пароль ?',
-                  style: TextStyle(color: AppColors.greyText7C),
-                )),
-          ),
-          SizedBox(height: 33),
-          GestureDetector(
-            onTap: () {
-              _auth();
-            },
-            child: Container(
-              width: 207,
-              height: 49,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: AppColors.green,
-                  borderRadius: BorderRadius.circular(50)),
-              child: Text(
-                'Далее',
-                style: TextStyle(color: AppColors.white),
+            padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+            alignment: Alignment.center,
+            child: Text(
+              errorText,
+              style: const TextStyle(
+                color: Colors.red,
+                fontSize: 16,
               ),
             ),
           ),
-          if (errorText != null)
-            Container(
-              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-              alignment: Alignment.center,
-              child: Text(
-                errorText,
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-        ],
-      ),
+      ],
     );
   }
 }
