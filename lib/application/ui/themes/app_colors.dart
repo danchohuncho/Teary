@@ -33,4 +33,7 @@ abstract class AppColors {
   static const greenBackground = Color(0xFFD4F4C9);
   static const mainBackground = Color(0xFFFAF5FF);
 
+  //Register form
+  static const shadowColorTextField = Color(0x80000000);
+
 }

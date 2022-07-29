@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:teary/application/ui/screens/auth_screens/Widgets/auth_textfield.dart';
+import 'package:teary/application/ui/screens/auth_screens/Widgets/dropdown_menu.dart';
 import 'package:teary/application/ui/themes/app_colors.dart';
 
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+class RegisterSecondScreen extends StatelessWidget {
+  const RegisterSecondScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class RegisterScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Нет аккаунта ?',
+                      'Уже есть аккаунт?',
                       style: TextStyle(
                           color: AppColors.greyText41,
                           fontSize: 16,
@@ -50,7 +51,7 @@ class RegisterScreen extends StatelessWidget {
                     TextButton(
                         onPressed: () {},
                         child: const Text(
-                          'Регистрация',
+                          'Войти',
                           style: TextStyle(
                               color: AppColors.orange,
                               fontSize: 16,
@@ -75,9 +76,9 @@ class _FormWidget extends StatefulWidget {
 }
 
 class _FormWidgetState extends State<_FormWidget> {
-  final _emailTextController = TextEditingController();
-  final _passwordTextController = TextEditingController();
-  final _repeatPasswordTextController = TextEditingController();
+  final _nameTextController = TextEditingController();
+  final _genderTextController = TextEditingController();
+  final _phoneNumberTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -86,30 +87,27 @@ class _FormWidgetState extends State<_FormWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
-          'Регистрация',
+          'Познакомимся?',
           style: TextStyle(color: AppColors.black, fontSize: 20),
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height / 16,
         ),
         AuthTextField(
-            textController: _emailTextController,
+            textController: _nameTextController,
             obscureText: false,
-            labelText: 'E-mail'),
+            labelText: 'Имя'),
+        const SizedBox(
+          height: 30,
+        ),
+        const DropdownMenu(),
         const SizedBox(
           height: 30,
         ),
         AuthTextField(
-            textController: _passwordTextController,
-            obscureText: true,
-            labelText: 'Пароль'),
-        const SizedBox(
-          height: 30,
-        ),
-        AuthTextField(
-            textController: _repeatPasswordTextController,
-            obscureText: true,
-            labelText: 'Повторите пароль'),
+            textController: _phoneNumberTextController,
+            obscureText: false,
+            labelText: 'Телефон'),
         const SizedBox(height: 60),
         GestureDetector(
           onTap: () {},

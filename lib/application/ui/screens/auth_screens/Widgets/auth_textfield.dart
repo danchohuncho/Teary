@@ -20,14 +20,11 @@ class AuthTextField extends StatelessWidget {
     const borderColor = AppColors.white;
 
     const textFieldBorderStyle = OutlineInputBorder(
-      borderSide: BorderSide(
-          width: 0, style: BorderStyle.none),
+      borderSide: BorderSide(width: 0, style: BorderStyle.none),
       borderRadius: BorderRadius.all(Radius.circular(24)),
     );
 
     const contentPadding = EdgeInsets.symmetric(horizontal: 14, vertical: 18);
-
-    const shadowColorTextField = Color(0x12000000);
 
     return Container(
       width: 270,
@@ -36,7 +33,7 @@ class AuthTextField extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(50)),
         boxShadow: [
           BoxShadow(
-              color: shadowColorTextField,
+              color: AppColors.shadowColorTextField,
               blurRadius: 8,
               spreadRadius: 0,
               offset: Offset(0.0, 4.0)),
